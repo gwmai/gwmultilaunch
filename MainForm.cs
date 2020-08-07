@@ -64,18 +64,24 @@ namespace GWMultiLaunch
 
         private void PlatformAlert()
         {
-            #if (BUILD32)
-                if (Environment.GetEnvironmentVariable("ProgramFiles(x86)") != null)
-                {
+           
+            if ((Environment.Is64BitProcess == true) && (Environment.Is64BitOperatingSystem == false))
+            {
                     MessageBox.Show(@"Warning: You are running the 32-bit build" + 
                     " of Guild Wars Multi-Launch under a 64-bit operating system. Functionality " +
                     "will be affected! Use the 64-bit version of GWML.", 
                     "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                this.Text += " (32-bit)";
-            #else
+            }
+
+            if(Environment.Is64BitProcess == true)
+            {
                 this.Text += " (64-bit)";
-            #endif
+
+            }
+            else
+            {
+                this.Text += " (32-bit)";
+            }          
         }
 
         #region Button Click Events

@@ -2,6 +2,27 @@ namespace GWMultiLaunch
 {
     partial class MainForm
     {
+
+        private System.Windows.Forms.ToolStrip basicControlsToolStrip;
+        private System.Windows.Forms.ToolStrip expertControlsToolStrip;
+        private System.Windows.Forms.ListBox profilesListBox;
+        private System.Windows.Forms.ToolStripButton addButton;
+        private System.Windows.Forms.ToolStripButton setPathButton;
+        private System.Windows.Forms.ToolStripButton removeButton;
+        private System.Windows.Forms.ToolStripButton copyButton;
+        private System.Windows.Forms.ToolStripButton launchButton;
+        private System.Windows.Forms.ToolStripButton shortcutButton;
+        private System.Windows.Forms.ToolStripButton masterShortcutButton;
+        private System.Windows.Forms.ToolStripButton killMutexButton;
+        private System.Windows.Forms.ToolStripButton startTexModButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton exitButton;
+        private ToolStripCheckBox forceUnlockCheckBox;
+        private SelfLabeledTextBox argumentsTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Button editArgButton;
+        private System.Windows.Forms.ToolTip auxToolTip;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -302,25 +323,7 @@ namespace GWMultiLaunch
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip basicControlsToolStrip;
-        private System.Windows.Forms.ToolStrip expertControlsToolStrip;
-        private System.Windows.Forms.ListBox profilesListBox;
-        private System.Windows.Forms.ToolStripButton addButton;
-        private System.Windows.Forms.ToolStripButton setPathButton;
-        private System.Windows.Forms.ToolStripButton removeButton;
-        private System.Windows.Forms.ToolStripButton copyButton;
-        private System.Windows.Forms.ToolStripButton launchButton;
-        private System.Windows.Forms.ToolStripButton shortcutButton;
-        private System.Windows.Forms.ToolStripButton masterShortcutButton;
-        private System.Windows.Forms.ToolStripButton killMutexButton;
-        private System.Windows.Forms.ToolStripButton startTexModButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton exitButton;
-        private ToolStripCheckBox forceUnlockCheckBox;
-        private SelfLabeledTextBox argumentsTextBox;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.Button editArgButton;
-        private System.Windows.Forms.ToolTip auxToolTip;
+      
 
     }
 }

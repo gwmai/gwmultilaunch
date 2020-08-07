@@ -27,6 +27,9 @@ namespace GWMultiLaunch
 {
     public partial class MainForm : Form
     {
+
+        private static NotifyIcon exceptionNotification;
+
         #region Make Copy
 
         private static string MakeCopy(string gwPath)
@@ -258,8 +261,20 @@ namespace GWMultiLaunch
                 //check to see if this copy is already started
                 if (IsCopyRunning(gwPath))
                 {
-                    MessageBox.Show(gwPath + " is already running, please launch a different copy.",
-                        Program.ERROR_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string errorString = gwPath + " is already running, please launch a different copy";
+                    //var response = MessageBox.Show(errorString,
+                    //Program.ERROR_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //if (response == System.Windows.Forms.DialogResult.OK)
+                    //{
+                    //    System.Windows.Forms.Clipboard.SetDataObject(errorString, true);
+                    //}               
+                    var notification = new NotifyIcon();
+                    notification.Visible = true;
+                    notification.Icon = System.Drawing.SystemIcons.Error;
+                    notification.BalloonTipText = errorString;
+
+                    // Display for 5 seconds.
+                    notification.ShowBalloonTip(3000);
                     return success;
                 }
             }
@@ -285,10 +300,31 @@ namespace GWMultiLaunch
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error launching: " + gwPath + "!\n" + e.Message,
-                    Program.ERROR_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                string errorString = "Error launching: " + gwPath + "!\n" + e.Message + "trace: " + e.ToString();
+                //var response = MessageBox.Show(errorString,
+                //Program.ERROR_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //if (response == System.Windows.Forms.DialogResult.OK)
+                //{
+                //    System.Windows.Forms.Clipboard.SetDataObject(errorString, true);
+                //}               
+                exceptionNotification = new NotifyIcon
+                {
+                    Visible = true,
+                    Icon = System.Drawing.SystemIcons.Error,
+                    BalloonTipText = errorString
+                };
 
+
+
+                // Display for 5 seconds.
+                exceptionNotification.ShowBalloonTip(3000);
+                exceptionNotification.Dispose();
+                writeLog(errorString);
+
+            }
+          
+            gw.Dispose();
+            GC.Collect();
             return success;
         }
 
@@ -342,6 +378,26 @@ namespace GWMultiLaunch
             return success;
         }
 
+        public static void writeLog(string text)
+        {
+
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                Log(text, w);
+            }
+        }
+
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog Entry : ");
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine("  :");
+            w.WriteLine($"  :{logMessage}");
+            w.WriteLine("-------------------------------");
+        }
+
         #endregion
     }
+
+
 }

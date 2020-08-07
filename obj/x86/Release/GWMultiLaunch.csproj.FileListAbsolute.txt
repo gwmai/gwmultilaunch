@@ -1,0 +1,11 @@
+G:\Projects\github\gwmultilaunch\bin\x86\Release\GWMultiLaunch.exe
+G:\Projects\github\gwmultilaunch\bin\x86\Release\GWMultiLaunch.pdb
+G:\Projects\github\gwmultilaunch\bin\x86\Release\Interop.IWshRuntimeLibrary.dll
+G:\Projects\github\gwmultilaunch\obj\x86\Release\Interop.IWshRuntimeLibrary.dll
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.csproj.ResolveComReference.cache
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.ArgumentsWizard.resources
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.MainForm.resources
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.Properties.Resources.resources
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.csproj.GenerateResource.cache
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.exe
+G:\Projects\github\gwmultilaunch\obj\x86\Release\GWMultiLaunch.pdb
