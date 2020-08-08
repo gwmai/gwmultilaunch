@@ -85,11 +85,11 @@ A: Simple answer, a flag that guild wars puts up which prevents another guild wa
 
 Q: How do I report a bug?
 
-A: Please report all bugs at http://code.google.com/p/gwmultilaunch/issues/list.
+A: Please report all bugs at https://github.com/gwmai/gwmultilaunch/issues
 
 ==Website==
 
-http://code.google.com/p/gwmultilaunch/
+https://github.com/gwmai/gwmultilaunch
 
 ==Contributors==
 
@@ -105,6 +105,10 @@ http://code.google.com/p/gwmultilaunch/
   * gergely.nagy - thank you for the idea and sample code to enable a cycling master shortcut
 
 ==History==
+v0.7 (2020/08/08)
+  * Improve logging and remove messageboxes in favour of toast notifications. Less intrusive 
+  * Move from SVN to git. 
+
 v0.6 (2010/04/10)
   * Fixed "-character" switch argument passing for shortcuts
     * Shortcuts to launch individual copies may need to be remade to be compatible with new version 
